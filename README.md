@@ -1,2 +1,2 @@
 # hibernate001
-hibernate知识相关内容
+hibernate知识相关讲解内容
