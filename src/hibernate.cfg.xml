@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- 方言 保证控制台输出效果一致 -->
+		<property name="dialect">
+			org.hibernate.dialect.MySQLDialect</property>
+		<!-- 数据库驱动jar包 -->
+		<property name="connection.driver_class">
+			com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/hibernate</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+		<!--显示sql语句是否格式化sql语句 -->
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<!--执行DDL的方式,create: 每一次运行都会覆盖原表中的内容 update: 保留原表中的内容 -->
+		<property name="hibernate.hbm2ddl.auto">create</property>
+		<!-- 将我们的对象和表的映射文件加载到主配置文件中 -->
+		<mapping resource="com/wwj/model/Person_hbm.xml" />
+		<mapping class="com.wwj.onetomany.Dad"/>
+		<mapping class="com.wwj.onetomany.Son"/>
+	</session-factory>
+</hibernate-configuration>
